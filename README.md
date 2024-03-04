@@ -1,7 +1,3 @@
-<p align = "center">
-<img width = "95%" height = "auto" src = "Images/Finalized logo (reworked for greater width).png">
-</p>
-
 ---
 ### General Information
 A batch scheduler written in C++ that simulates various pragmatic scheduling algorithms for compute clusters and supercomputers, keeping track of parallel job schedules and compute-node usage (with jobs in the standard workload format provided as input, apart from configurable nodes).
@@ -96,5 +92,3 @@ One thing that is done in common for each algorithm is the maintainence of a que
     Under conservative backfilling, each and every newly arriving job is given a reservation at the earliest time, such that it does not violate any previously existing guarantees. These start time guarantees are given in arrival order, and the existing reservations act as ceilings in the schedule that prevent later arriving jobs from backfilling easily/inappropriately. Problem here is that long jobs find it harder to backfill with this scheme, since the longer a job is, the more difficult it becomes for it to get a reservation ahead of previously arrived jobs.
     - **EASY** <br>
      For this one, the time at which the first job in the queue starts execution had to be kept track of, whilst maintaining only one reservation (as opposed to one for each job in CBF) for the job in that queue. Note that the concept of 'reservation' here is the same as in CBF above, i.e. a job may be backfilled if and only if it does not delay any other job ahead of it in the queue. Due to the relaxation of the constraint on reservations (having only one at a time), EASY makes it easier to backfill, although there is a chance for the jobs other than the first one to get delayed. Starvation is something that one doesn’t face here, since the delay of the first job is bound by the runtime of the current jobs, although jobs other than the first one can be delayed indefinitely.
-- **Project Name and Logo** <br> 
-I coined the term for this project to be 'Zephyr' simply out of fanciness, although Flagstaff's weather, Monsoon's login node (more specifically 'wind', the one that I ssh into) and the greek god of the west wind added to the approval of nomenclature. As for my logo, the 'Y' in the word represents the pokemon [Yveltal](https://photos.google.com/share/AF1QipM3GaFPsE2aYDFht4DLknoYV5-2p_nqHYVbd6QobtfeWPGtGPpsQd-MHJ5q0XFQBQ/photo/AF1QipNCIJvG-RncM4ePu5p1vjq3FD2SC5bYR2Ka_X-S?key=cGlORDZzUnp0VGpMdVRVblBCMzRWYlRFby1QVEJ3), which I think is cool :)
