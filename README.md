@@ -1,4 +1,3 @@
----
 ### General Information
 A batch scheduler written in C++ that simulates various pragmatic scheduling algorithms for compute clusters and supercomputers, keeping track of parallel job schedules and compute-node usage (with jobs in the standard workload format provided as input, apart from configurable nodes).
 
